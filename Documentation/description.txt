@@ -1,0 +1,18 @@
+October 2006             Dome Control    !!! REVISE TODO COMMENTS !!!
+                         ~~~~~~~~~~~~
+
+Dome Control is dome remote control client for Java Platform.  This
+application is used for interactive communication with astronomical
+domes developed by company AstroLab Brno (Czech Republic).
+
+The code and the documentation is released under the terms of the
+GNU/GPL license.  See COPYING file for further details.
+
+New versions can be found on the Sourceforge website, at
+http://www.sourceforge.com/.... (TODO: Supply correct address)
+
+Re-organization and patches are gratefully welcomed.
+
+--
+Gabriel Szasz (author)
+October 7, 2006  (TODO: Change to release date)

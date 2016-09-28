@@ -1,0 +1,298 @@
+2008-01-05  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* AppProperties.java: Simulator flag added to properties.
+	Simulator and Alert Checkboxes were not loaded from properties
+	properly.  Fixed.
+
+	* Preferences.java: Simulator Check Box connected with application
+	properties.  Simulator and Alert checkboxes were not set their
+	state due to loaded properties. Fixed.
+
+	* Preferences.java: Added Simulator checkbox.
+
+
+2007-05-06  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+        * src/Icons/Calibration.gif:	
+	File 'Calibrate.gif' was renamed in order to maintain identifier
+	unification.
+
+	* src/Calibration.java, src/AppProperties.java, src/DomeControl.java, src/Preferences.java:
+	Added Calibration window. Function not implemented yet.
+
+2007-04-14  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/UDPConnection.java:
+	Preliminary adaptation to the DomeCommunicator object.
+
+	* src/Alert.java: Added getAudioFile method.
+
+	* src/DomeControl.java:
+	Adaptation of Calibrate Button to newly designed icon.
+
+	* src/Console.java, src/Preferences.java, src/Visualizer.java:
+	Removed 'Dome Control' prefix from window titles.
+
+	* src/Icons/Calibrate.gif:
+	Designed new icon for Calibrate Button.
+
+2007-04-05  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/DomeControl.java: Improved design of Calibrate Button.
+
+2007-02-15  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/Visualizer.java, src/Preferences.java, src/Console.java, src/DomeControl.java:
+	Frame minimized window icon loaded directly from DomeControlIcons.
+	Loading via Toolkit doesn't work in Windows.
+
+	* Documentation/DRAFT-observatory-parameters.txt: Emphasized
+	initial warning that this file has to be revised.
+
+	* USING: Corrected some grammar mistakes.
+
+	* src/Console.java: Implemented 'Copy to Clipboard' action.
+
+2007-02-14  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* Documentation/installation-guide.txt, INSTALL: Corrected
+	installation instructions for MS Windows.
+	
+	* src/Icons/Copy.gif: Adding of 'Copy to Clipboard' icon file.
+
+	* src/customProperties: Update after adding new AppProperties.
+
+	* src/Makefile: Update after adding Visualizer.java file.
+
+	* src/DomeControl.java: Implemented saving and restoring of the
+	window position.  Added visualizer object.  Added isRunning
+	indicator of application status.  All System.out.println calls
+	replaced by DomeControl.console.print.  Method
+	setFromAppProperties set as static.  DomeControlIcons class moved
+	outside DomeControl class.
+
+	* src/Console.java: JTextArea replaced by more stylable JTextPane
+	implementing StyledDocument.  Implemented different styles for
+	different types of messages.  Implemented constants indicating
+	type of messages.  Implemented saving and restoring of the window
+	position and size.  Improved appearence of Console window.  Added
+	'Copy to Clipboard' button to bottom toolbar.
+
+	* src/AppProperties.java: Added AppProperties for storing of the
+	windows positions.  Added AppProperties for storing of the Console
+	window dimensions.
+
+	* src/Visualizer.java: Added file Visualizer.java containing the
+	implementation of Visualizer class.
+
+	* src/Preferences.java: Implemented reference to static
+	DomeControl.customProps. Implemented saving and restoring of the
+	window position.  Disposing other hidden windows on close to save
+	system resources.  Implemented public methods for remote
+	manipulation with showVisualizer and showConsole checkboxes.
+	Implemented ActionListener of showVisualizerCheckBox.  Improved
+	ActionListener of showConsoleCheckBox.  All System.out.println
+	calls replaced by DomeControl.console.print.  Using application
+	logo icon from static DomeControlIcons class.  Added application
+	icon to Properties window.
+
+2007-02-13  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/Makefile: Added file Console.java to compilation Makefile.
+
+	* src/PreferencesDialog.java: Solved problem with saving of
+	AppProperties using newly created method setFromAppProperties from
+	AppProperties class.  Implementation of ActionListener to
+	showVisualizerCheckBox and showConsoleCheckBox to provide
+	XMMS-like behavior.
+
+	* src/Dome.java: First implementation of setFromAppProperties
+	method.
+
+	* src/Tracking.java: Useless call of deprecated method
+	DomeControl.getAppProperties replaced with direct static reference
+	DomeControl.customProps.
+
+	* src/DomeControl.java: Implemented Console object and it's
+	connection to PreferencesDialog.  Improved system of AppProperties
+	distribution through DomeControl objects.
+
+	* src/Console.java: Added multi-level debug mode suport. Added
+	setFromAppProperties method.
+
+	* src/AppProperties.java: Added methods setFromAppProperties and
+	setFromProperties.  Calls of buggy Boolean.getBoolean(String)
+	method from Java API replaced with simple ternary operator.
+
+2007-02-04  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/Alert.java: Created object for audio alert messages.
+
+2007-01-27  Gabriel Szasz  <gszasz@physics.muni.cz>
+
+	* src/Console.java: Implemented adaptation to window resizing.
+
+	* all: Files imported into project CVS Repository
+
+2006-01-21  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/Console.java: Created class for Console Window.
+
+2006-10-24  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/Mount.java: Added setFromAppProperties method. Improved set
+	methods to handle non changed parameters properly.
+	
+	* src/DomeControl.java: Solved some elementary bugs.
+
+2006-10-23  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Finalized layout of all tabs.
+	Implemented connection with DomeControl object.
+	
+	* src/UDPConnection.java: Improved Socket connection safety.
+	Added NetworkException class to handle some new hardware level
+	network exceptions.
+	
+	* src/DomeControl.java: Solved couple of bugs.  Implemented
+	AppProperties mechanism.
+	
+	* src/Tracking.java: Implemented AppProperties mechanism.
+	
+	* src/Dome.java: Modified method callings of UDPConnection object
+	according to the changes of the class.
+	
+	* src/LSTClock.java: Removed direct connection with AppProperties.
+	Added setLongitude method.
+
+2006-10-20  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/DomeControl.java: Solved problem with non displaying app
+	icon.
+	
+	* src/PreferencesDialog.java: Added CreditsPanel
+
+2006-10-19  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Modified design of NetworkPanel.
+	Added MonitorPanel and MiscPanel.
+	
+	* src/AppProperties.java: Solved some type conversion bugs.
+	Extended toString() method.
+
+2006-10-14  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Added NetworkPanel to General tab.
+	
+	* src/DomeControl.java: Implemented host, port and
+	domeMonitoringDelay properties.
+	
+	* src/AppProperties.java: Added domeMonitoringDelay,
+	showVisualizer and showConsole properties.
+
+2006-10-08  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Solved problem with range checking
+	in CoordinatesField.  Implemented color change of selection in
+	case of out of range values.  Added DomeParameters,
+	MountParameters and TrackingParameters.  Implemented
+	ParameterSpinner from DomeSimulator. Rearranged Tracking tab.
+	Added Object Parameters panel.  Solved problem with half-range
+	checking in ParameterField.
+	
+	* src/AppProperties.java: Solved problems with Coordinate and
+	HourCoordinate objects.  Added properties for Tracking Delay and
+	Slit Boundary Treshold.
+	
+	* Documentation/observatory-parameters.txt: Added information
+	about parameter units.  Improved some of the definitions.  Added
+	some hints how to measure critical parameters.
+
+2006-10-07  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Improved CoordinatesField object.
+	
+	* Documentation/observatory-parameters.txt: Created documentation
+	on observatory parameters, including parameter hierarchy and
+	definitions.
+	
+	* Makefile: Created global makefile to simplify compilation and
+	installation.
+
+2006-10-06  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Improved CoordinatesField object.
+
+2006-10-04  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Implemented CoordinatesPanel object.
+
+2006-10-03  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Solved problem with number
+	formatting in ParameterField.  Added half-range support into
+	ParameterField object.
+
+2006-10-01  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/PreferencesDialog.java: Added ChangeListener and
+	InputVerifier to ParameterField object.  Implemented AppProperties
+	support.
+
+2006-09-30  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/AppProperties.java: Implemented properties for alerts.
+	Improved hierarchy of properties.
+	
+	* src/PreferencesDialog.java: Encapsulation of alert panel into
+	separated object
+
+2006-09-24  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/DomeControl.java, src/Dome.java, src/Mount.java, src/Tracking.java:
+	Implemented AppProperties object, redesign of some methods.
+	
+	* src/LSTClock.java: Added support for dynamic changing of
+	longitude.
+	
+	* src/UDPConnection.java: Added dynamic changing of host and port
+	during connection.
+	
+	* src/AppProperties.java: Completely debugged. Added new
+	Properties.
+	
+	* src/PreferencesDialog.java: Implemented file load dialog. Added
+	alert panel.
+	
+
+2006-09-23  Gabriel Szasz  <gszasz@physics.muni.cz>
+	
+	* src/AppProperties.java: Implemented mechanism of Properties.
+	
+	* src/PreferencesDialog.java: Implemented tabbed interface.
+
+2006-06-11  Gabriel Szasz  <gszasz@physics.muni.cz>	
+
+	* src/Dome.java: Solved communication bugs.
+	
+	* src/catalog.dat: Added object catalog.
+	
+	* src/LSTClock.java: Integrated LST Clock object for tracking.
+	
+	* src/Tracking.java: Optimized tracking algorithm.
+	
+	* src/DomeControl.java: Added Tracking Control Panel and related
+	features.
+
+2006-06-07  Gabriel Szasz  <gszasz@physics.muni.cz>	
+
+	* src/Dome.java: Solved communication bugs.
+
+2006-06-06  Gabriel Szasz  <gszasz@physics.muni.cz>	
+
+	* src/DomeControl.java: Added application icon.
+	
+	* src/Tracking.java: Added dome tracking algorithm from
+	DomeSimulator.
+	
+	* src/Mount.java: Added mount object from DomeSimulator.

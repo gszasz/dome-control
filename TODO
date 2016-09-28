@@ -1,0 +1,21 @@
+To Do:
+------
+
+April 14, 2007
+
+  - Develope intermediate network communication layer -
+    DomeCommunicator object - for establishing reliable-like network
+    connection with dome control unit, featuring internal connection
+    checking mechanism and proper reaction for feedback responses of
+    the control unit.
+
+  - Connect Tracking object with AppProperties and Console window.
+
+  - Implement Calibration Button
+
+  - Implement Visualizer window
+
+September 27, 2006
+
+  - Develope correction grid based on Properties.
+  - Implement autocalibration of correction grid.

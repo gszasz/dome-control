@@ -1,0 +1,220 @@
+January 2006          Observatory Parameters   !!! REVISE TODO COMMENTS !!!
+                      ~~~~~~~~~~~~~~~~~~~~~~
+TODO: CHECK OUT ALL THE WORDS AND PHRASES IN POINTED BRACKETS.
+
+The following document contains the basic definition and hierarchy of
+parameters used for dome tracking and also some hints how to measure
+or estimate these parameters.  You can also find there list of
+parameters for various observatories in Central Europe.
+
+Contents
+========
+
+  0. DEFINITIONS
+  0.1 Definition of Observatory Coordinates
+  0.2 Definition of Dome Parameters
+  0.3 Definition of Mount Parameters
+  0.4 Definition of Telescope Parameters
+  0.5 Definition of Tracking Parameters
+
+  1. PARAMETERS
+  1.1 Ondrejov Observatory Parameters
+  1.2 Modra Observatory Parameters
+  1.3 MonteBoo Observatory Parameters
+  1.4 Hlohovec Observatory Parameters
+
+
+0. Definitions
+==============
+
+0.1 Definition of Observatory Coordinates
+-----------------------------------------
+
+  * Longitude [deg]: Angular distance of the observatory location from
+    the Greenwitch meridian.  The longitude is positive to the west
+    and negative to the east.
+
+  * Latitude [deg]: Angular distance of the observatory location from
+    the equator.  The latitude is positive to the north and negative
+    to the south.
+
+
+0.2 Definition of Dome Parameters
+---------------------------------
+
+  * Wall Height [m]: Height of the dome building wall relative to the
+    floor.  The boundary between the wall and the dome is not usually
+    well defined and it is the field for some experiments.  Ideal Wall
+    Height is equal to distance from the center of the floor to the
+    <geometric> center of sphere fitting inner surface of the dome.
+
+  * Dome Radius [m]: Half of the dome <inbound diameter>.  This is the
+    radius of sphere fitting inner surface of the dome.  Do not use
+    the factory value of dome diameter to calculate this parameter.
+    Try to do several measurements and use the mean value.
+
+  * Slit Width [m]: Linear distance between vertical slit boundaries,
+    which is usually the same for all heights.  Feel free to use the
+    real value in this point.  Treshold to calibrate minimal
+    approach to the slit boundaries is handled by another parameter.
+
+  * Slit Depth [m]: This parameter is handled as diference of radii of
+    spheres fitting inner and outer dome surfaces.  There is no exact
+    way how to measure this parameter, however, you can do the rough
+    estimate according to the measurements of the linear slit
+    thickness.  Feel free to experiment.
+
+0.3 Definition of Mount Parameters
+----------------------------------
+
+  * Excentric Distance [m]: Deflection of the leg position relative to
+    the center of floor in north-south axis (positive to the south).
+
+  * Leg Axis Length [m]: Lenth of the vertical leg axis from the floor
+    to its <geometric> intersection with polar axis.
+
+  * Polar Axis Length [m]: Length of the polar axis from its
+    <geometric> intersection with leg axis up to its <geometric>
+    intersection with declination axis.
+
+  * Declination Axis Length [m]: Length of the declination from its
+    <geometric> intersection with polar axis up to its <geometric>
+    intersection with optical axis of the major telescope.
+
+0.4 Definition of Telescope Parameters
+--------------------------------------
+
+  * Scope Diameter [m]: Diameter of the telescope aperture.
+
+  * Scope Offset [m]: Perpendicular distance between optical axis of
+    the major telescope and the optical axis of the attached
+    telescope.
+
+  * Scope Position Angle [deg]: Angular position of the attached
+    telescope relative to the declination axis, measured clockwise.
+    In doubt see following scheme:
+
+      Scheme of Scope Position Angle:
+
+                   90      (viewed from telescope <entrance> aperture)
+                 __|__
+                /     \  180
+             0-|   o   |========= declination axis
+                \_____/
+                   |  
+                  270
+
+
+0.5 Definition of Tracking Parameters
+-------------------------------------
+
+  * Sensor Count: Number of "virtual sensors" used for numerical
+    calculation of the intersection between dome sphere and the
+    telescope aperture.  This number affect the precision of Optimal
+    Tracking Mode.
+
+  * Tracking Delay [s]: Interval between two computations of dome
+    position (in seconds).  Set this parameter to the large value, if
+    you want to save CPU time and mechanical parts of the dome.
+
+  * Slit Boundary Treshold [m]: Maximum linear distance of aproach to
+    the intersection to slit boundary.  This parameter is important
+    for "Optimized Tracking Mode".
+
+  * Tracking Mode: Algorithm used for dome tracking.
+
+      - Follow Object: The simplest algorithm.  Setting center of slit
+        to the actual object azimuth.
+
+      - Follow Scope: Setting centrum of slit to the center of
+        calculated intersection.
+
+      - Optimized: The most sophisticated algorithm.  If the
+        intersection has passed through slit center and gets close to
+        one of the slit boundaries, the algorithm moves the slit to
+        the position in which the opposite slit boundary is close to
+        the intersection.  If intersection reaches slit boundary
+        without passing the center first, the slit is set to the
+        center of the intersection.  This behavior prevents "bouncy"
+        dome moves in case if the intersection moves almost
+        along the slit.  If the intersection approaches to the slit
+        boundary in the zenith area, slit is moved to the azimuth of
+        the touch point.  If part of the intersection is below
+        horizon, the dome is not moved at all.  This algorithm was
+        developed to minimize dome movements during observation, in
+        order to save mechanical parts of the dome.
+
+
+1. Parameters
+=============
+
+1.1 Ondrejov Observatory Parameters
+-----------------------------------
+
+  * Longitude:                N/A
+  * Latitude:               ~50.00 deg
+  * Wall Height:              2.00 m
+  * Dome Radius:              8.00 m / 2
+  * Slit Width:               2.50 m
+  * Slit Depth:               N/A      (not used)
+  * Excentric Distance:       0.90 m
+  * Leg Axis Length:          1.60 m + 0.45 m
+  * Polar Axis Length:        0.30 m
+  * Declination Axis Length:  0.90 m
+  * Scope Diameter:           0.65 m
+  * Scope Offset:             0.00 m   (major telescope)
+  * Scope Position Angle:     0.00 deg (major telescope)
+
+
+1.2 Modra Observatory Parameters
+--------------------------------
+
+  * Longitude:                N/A
+  * Latitude:               ~50.00 deg
+  * Wall Height:              2.80 m
+  * Dome Radius:              4.10 m
+  * Slit Width:               2.50 m
+  * Slit Depth:               N/A
+  * Excentric Distance:       0.90 m
+  * Leg Axis Length:          1.70 m
+  * Polar Axis Length:        1.40 m
+  * Declination Axis Length:  0.90 m
+  * Scope Diameter:           0.60 m
+  * Scope Offset:             0.00 m  (major telescope)
+  * Scope Position Angle:     0.0 deg (major telescope)
+
+
+1.3 MonteBoo Observatory Parameters
+-----------------------------------
+
+  * Longitude:                N/A
+  * Latitude:               ~50.00 deg
+  * Wall Height:              0.40 m
+  * Dome Radius:              6.50 m / 2
+  * Slit Width:               2.00 m
+  * Slit Depth:               N/A
+  * Excentric Distance:       1.20 m
+  * Leg Axis Length:          0.00 m
+  * Polar Axis Length:        0.90 m
+  * Declination Axis Length:  0.00 m  (non-GEM)
+  * Scope Diameter:           0.60 m
+  * Scope Offset:             0.00 m  (major telescope)
+  * Scope Position Angle:     0.0 deg (major telescope)
+
+
+1.4 Hlohovec Observatory Parameters
+-----------------------------------
+
+  * Longitude:                N/A
+  * Latitude:               ~50.00 deg
+  * Wall Height:              2.59 m
+  * Dome Radius:              5.01 m / 2
+  * Slit Width:               2.00 m
+  * Slit Depth:               0.50 m
+  * Excentric Distance:       0.11 m
+  * Leg Axis Length:          1.88 m
+  * Polar Axis Length:        0.36 m
+  * Declination Axis Length:  0.93 m
+  * Scope Diameter:           0.60 m
+  * Scope Offset:             0.00 m  (major telescope)
+  * Scope Position Angle:     0.0 deg (major telescope)

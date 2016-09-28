@@ -1,0 +1,53 @@
+Usage Notes:
+------------
+
+ * Dome Control is not using correction grid.  This feature will be
+   implemented in near future.
+
+ * If Dome Control is executed from terminal window by command:
+ 
+   java -jar DomeControl.jar
+
+   you can track some debugging messages.
+
+ * Some combinations of parameters lead to division by zero and
+   wholeover application failure.  Program doesn't take care about
+   forbidden values, so be careful while playing with parameters,
+   especially Dome Radius seems to be the most critical one.
+
+ * If Dome Error is reported, it means, in most of the cases, a
+   malfunction of frequency changer.  In such case, follow these
+   instructions:
+
+   1. First of all, try to restart Dome Control.  If Dome Error is not
+      reported anymore, it was a fake report caused by software bug.
+      In this case, please, REPORT THE BUG! (see file BUGS).
+
+   2. Close Dome Control and all the other applications communicating
+      with control unit on all connected computers.
+  
+   3. Go to the dome building and copy the number shown on the
+      frequency changer display, which indicates the error code.  This
+      number cannot be saved electronically and it is the only way how
+      to track the cause of the malfunction.
+
+   4. Switch whole control unit off using the large power button.  In
+      this moment you have to wait a couple of minutes till all of the
+      internal <condensators> will be discharged.  Please, convince
+      yourself that there is no <flashing> LED, neither on the control
+      unit nor on any of the sensors.  After this, switch the power
+      button back on and wait for a couple of seconds, till the
+      control unit will be booted up.
+
+   5. Return the dome to the parking position using hardware manual
+      control (taster).  Convince yourself that LED on the zero
+      position sensor is <flashing>.
+
+   6. Restart control unit once again, according to the point 4, to
+      ensure that the unit is using correct zero position.
+
+   7. Run Dome Control.
+
+   Following this instructions during every malfunction of frequency
+   changer should ensure correct behavior of the dome after the
+   failure and may help to track the cause of the malfunction.

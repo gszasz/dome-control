@@ -1,0 +1,229 @@
+February 2007            Installation Guide
+                         ~~~~~~~~~~~~~~~~~~
+
+This file contains installation guide for installation Dome Control on
+UNIX/Linux and MS Windows box.
+
+Contents:
+=========
+
+  0. DEPENDENCIES
+  0.1 Java(TM) Platform
+  0.2 Java3D API
+
+  1. INSTALLATION FROM BINARY PACKAGE
+  1.1 UNIX/Linux
+  1.2 MS Windows
+
+  2. INSTALLATION FROM SOURCE CODE
+  2.1 UNIX/Linux
+  2.2 MS Windows
+  
+
+0. Dependencies
+===============
+
+0.1 Java(TM) Platform
+--------------------- 
+Dome Control is written for Java(TM) platform.  It was tested using
+Java Standard Edition 1.4.2, but feel free to use newer version of
+JavaSE.  Be sure you are using original Java SE from Sun Microsystems,
+otherwise we cannot ensure compatibility of all used classes.  You can
+download JavaSE Packages for free from:
+
+  http://java.sun.com/javase/downloads
+
+Note that you need to install JavaSE SDK, if you want to compile Dome
+Control from source code.  Otherwise download the JavaSE JRE (Java
+Runtime Environment).
+
+0.1 Java3D API
+-------------- 
+Dome Control uses special classes for 3D graphics which are not part
+of the JavaSE.  You have to download and install Java3D API.  This
+package is available for free at:
+
+  http://java.sun.com/products/java-media/3D/downloads
+
+Dome Control has been tested with Java3D API 1.4.2, but it is supposed
+to work with newer version as well.
+
+
+1. Instalation from binary package
+==================================
+
+1.1 UNIX/Linux
+--------------
+
+1. Convince yourself that JavaSE JRE (or SDK) is properly installed in
+   your system and its version is 1.4.2 or higher.  If you are using
+   one of the Linux distributions or Solaris(TM), the JavaSE should be
+   already installed.  Type "java -version" in console and you should
+   get something like this:
+
+   ---
+   java version "1.4.2_01"
+   Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_01-b06)
+   Java HotSpot(TM) Client VM (build 1.4.2_01-b06, mixed mode)
+   ---
+
+   If not, try to download and install newest version of JavaSE from
+   website mentioned in chapter 0.1.
+
+2. Download and install Java3D API from website mentioned in chapter 0.2.
+
+3. Unpack the DomeControl.zip archive.
+
+4. Change to unpacked directory and try following command:
+
+   java -jar DomeControl.jar
+
+   If both, JavaSE JRE and Java3D API were installed properly, this
+   command should launch Dome Control application.
+
+5. If you want to access Dome Control globally, install it to your
+   system with following command (as root):
+
+   make install
+
+6. After this, you can launch Dome Control from any location typing:
+
+   DomeControl
+
+
+1.2 MS Windows
+--------------
+
+1. Download and install JavaSE JRE (or SDK) from the website mentioned
+   in chapter 0.1.
+
+2. Download and install Java3D API from website mentioned in chapter 0.2.
+
+3. Unpack DomeControl.zip archive.
+
+4. Run MS DOS Prompt (in Windows 95/98/Me) or cmd (in Windows
+   NT/2000/XP), change to the unpacked directory and type following
+   command:
+
+   java -jar DomeControl.jar
+
+   If both, JavaSE JRE and Java3D API were installed properly, this
+   command should launch Dome Control.
+
+5. To access DomeControl globally, create folder:
+
+   C:\Program Files\DomeControl
+
+   and copy there files "DomeControl.jar" and "DomeControl.ico".
+
+6. Create new Shortcut with following parameters:
+
+   * Target:
+
+      "C:\Program Files\Java\j2re-1.4.2_11\bin\javaw.exe" -jar DomeControl.jar
+
+     Warning! Exact target depends on JavaSE version and location.
+     This example is valid for JavaSE Runtime Environment 1.4.2-11.
+
+   * Run in:
+
+      "C:\Program Files\DomeControl"
+
+   * Icon: 
+
+       "C:\Program Files\DomeControl\DomeControl.ico"
+
+
+7. Run Dome Control clicking on the created shortcut.
+
+
+2. Installation from Source Code
+================================
+
+2.1 UNIX/Linux
+--------------
+
+1. Convince yourself that JavaSE SDK is properly installed in your
+   system and its version is 1.4.2 or higher.  If you are using one of
+   the Linux distributions or Solaris(TM), it is possible that JavaSE
+   SDK is already installed.  If not, try to download and install
+   newest version from website mentioned in chapter 0.1.
+
+2. Download and install Java3D API from website mentioned in chapter
+   0.2.
+
+3. Unpack file DomeControl-src.zip.
+
+4. Change to the unpacked directory and type command:
+
+   make
+
+5. If there is no error, try to run following command:
+
+   java -jar src/DomeControl.jar
+
+   If both, JavaSE SDK and Java3D API were installed properly, this
+   command should launch Dome Control window.
+
+6. To install compiled Dome Control to the system, type (as root):
+
+   make install
+
+7. Now you can execute Dome Control from anywhere with command:
+
+   DomeControl
+
+
+2.2 MS Windows
+--------------
+
+1. Download and install JavaSE SDK from the website mentioned in
+   chapter 0.1.
+
+2. Download and install Java3D API from website mentioned in chapter 0.2.
+
+3. Unpack file DomeControl-src.zip.
+
+4. Run MS DOS Prompt (in Windows 95/98/Me) or cmd (in Windows
+   NT/2000/XP), change to the unpacked directory and type following
+   commands:
+
+   cd src
+   javac *.java
+   jar cmf mainClass DomeControl.jar *.class
+
+5. Now you can run Dome Control directly typing command:
+
+   java -jar DomeControl.jar 
+
+6. To install Dome Control to system, create folder:
+
+   C:\Program Files\DomeControl
+
+7. Copy files: 
+
+     src\catalog.dat         src\DomeControl.jar
+     src\customProperties    icons\DomeControl.ico
+     src\defaultProperties
+
+   to created folder "C:\Program Files\DomeControl".
+
+8. Create new Shortcut with following parameters:
+
+   * Target:
+
+      "C:\Program Files\Java\j2re-1.4.2_11\bin\javaw.exe" -jar DomeControl.jar
+
+     Warning! Exact target depends on JavaSE version and location.
+     This example is valid for JavaSE Runtime Environment 1.4.2-11.
+
+   * Run in:
+
+      "C:\Program Files\DomeControl"
+
+   * Icon: 
+
+       "C:\Program Files\DomeControl\DomeControl.ico"
+
+
+9. Run Dome Control clicking on the created shortcut.

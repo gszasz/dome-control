@@ -1,0 +1,22 @@
+October 2006             Dome Control
+                         ~~~~~~~~~~~~
+
+Dome Control is dome remote control client for Java Platform.  This
+application is used for interactive communication with astronomical
+domes developed by AstroLab Inc.
+
+The code is released under the terms of the GPL; see the file COPYING
+for details.
+
+You can find notes on installing in the file INSTALL and usage notes
+in the file USING.
+
+New versions can be found on the Hlohovec Observatory website, at
+http://www.portcoeli.sk/en/projects/
+
+Re-organization and patches are of course greatly welcomed. See the
+TODO file for further information.
+
+--
+Gabriel Szasz (author)
+October 7, 2006
